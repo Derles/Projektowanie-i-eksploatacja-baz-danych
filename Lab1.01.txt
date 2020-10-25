@@ -1,0 +1,33 @@
+DROP DATABASE IF EXISTS Lab;
+GO
+
+CREATE DATABASE Lab;
+GO
+
+USE Lab;
+GO
+ALTER AUTHORIZATION ON DATABASE::Lab TO [sa]
+GO
+ALTER DATABASE Lab SET RECOVERY SIMPLE 
+GO
+
+CREATE TABLE dbo.PolscyNoblisci (Osoba nvarchar(50)
+								,Plec char(1)
+								,PlecOpis nvarchar(15));
+GO
+
+INSERT INTO dbo.PolscyNoblisci (Osoba, Plec, PlecOpis) 
+VALUES (N'Maria Skłodowska-Curie', 'K', 'Kobieta')
+	,(N'Maria Skłodowska-Curie', 'K', 'Kobieta')
+	,(N'Olga Tokarczuk', 'K', 'Kobieta')
+	,(N'Wisława Szymborska', 'K', 'Kobieta')
+	,(N'Czesław Miłosz', 'M', 'Mężczyzna')
+	,(N'Władysław Reymont', 'M', 'Mężczyzna')
+	,(N'Henryk Sienkiewicz', 'M', 'Mężczyzna')
+	,(N'Lech Wałęsa', 'M', 'Mężczyzna')
+
+
+SELECT * FROM dbo.PolscyNoblisci;
+
+
+
